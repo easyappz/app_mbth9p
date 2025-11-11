@@ -54,7 +54,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Me'
+                $ref: '#/components/schemas/MeResponse'
         '401':
           description: Unauthorized
   /api/auth/token:
@@ -158,6 +158,30 @@ components:
       - password
       - password2
     Me:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+          nullable: true
+        bio:
+          type: string
+      required:
+      - first_name
+      - last_name
+      - email
+      - phone
+      - bio
+    MeResponse:
       type: object
       properties:
         first_name:
