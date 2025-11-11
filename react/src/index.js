@@ -4,10 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Ant Design and localization
+import 'antd/dist/reset.css';
+import { ConfigProvider } from 'antd';
+import ru_RU from 'antd/locale/ru_RU';
+
+// Dayjs locale setup
+import dayjs from 'dayjs';
+import 'dayjs/locale/ru';
+dayjs.locale('ru');
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider locale={ru_RU}>
+      <App />
+    </ConfigProvider>
   </React.StrictMode>
 );
 
